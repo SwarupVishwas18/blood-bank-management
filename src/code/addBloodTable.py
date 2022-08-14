@@ -9,12 +9,12 @@ conn = sql.connect('blood.db')
 
 c = conn.cursor()
 
-# c.execute("""
-#     CREATE TABLE blood (
-#         bloodType text,
-#         availablePackets INTEGER
-#     )
-# """)
+c.execute("""
+    CREATE TABLE blood (
+        bloodType text,
+        availablePackets INTEGER
+    )
+""")
 
 c.execute("INSERT INTO blood VALUES ('A+', '0')")
 c.execute("INSERT INTO blood VALUES ('B+', '0')")
