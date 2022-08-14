@@ -1,6 +1,6 @@
 import sqlite3 as sql
 import transact
-
+from colorama import Fore
 
 class BloodInfo:
     def __init__(self):
@@ -14,6 +14,7 @@ class BloodInfo:
         q = f"UPDATE blood SET availablePackets = '{availpck}' WHERE bloodType = '{blood[0]}'"
         self.c.execute(q)
         self.conn.commit()
+        print(Fore.LIGHTGREEN_EX)
         print("Blood Donated Successfully..!!")
 
     def removeBlood(self):
@@ -22,11 +23,18 @@ class BloodInfo:
         availpck = self.getAvailablePckt(blood[0])
         if availpck > 0:
             currpck = availpck - blood[1]
+            if currpck < 0:
+                print(Fore.RED)
+                print(f"Sorry But We only {availpck} bags of blood..")
+                return None
             q = f"UPDATE blood SET availablePackets = '{currpck}' WHERE bloodType = '{blood[0]}'"
             self.c.execute(q)
             self.conn.commit()
+            t.updateStatus()
+            print(Fore.LIGHTGREEN_EX)
             print("Blood Given Successfully..!!")
         else:
+            print(Fore.RED)
             print("ERROR!!")
             print("Sorry but no packets available of given blood group")
 

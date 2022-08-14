@@ -1,16 +1,19 @@
 import bloodInfo
 import transact
-
+from colorama import Fore
 
 def login():
+    print(Fore.CYAN)
     pwd = input("Enter the password : ")
     if pwd == 'heatwavesHBP':
         panel()
     else:
+        print(Fore.RED)
         print("Incorrect Password..!!")
 
 
 def displayPanel():
+    print(Fore.CYAN)
     print("------------------------------------------")
     print("---------------ADMIN PANEL----------------")
     print("------------------------------------------")
@@ -39,5 +42,6 @@ def panel():
             blood.resetData('AB-')
             blood.resetData('O-')
         elif inp == '3':
+            print(Fore.GREEN)
             print("Logging You Out")
             break

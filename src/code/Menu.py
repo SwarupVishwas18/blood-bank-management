@@ -1,25 +1,27 @@
 import DonateBlood as don
 import TakeBlood as take
 import bloodInfo
-
-
+from colorama import Fore
+import normal
 class Menus:
 
     def __init__(self):
         pass
 
     def menu(self):
-        print("------------------------------------------")
-        print("-----------Blood Bank Management----------")
-        print("------------------------------------------")
-
+        print(Fore.CYAN)
+        normal.printBrand("Blood Bank Management System")
+        print()
+        print()
         print("1.Show Data of All Available Blood.")
         print("2.Donate Blood")
         print("3.Take Blood")
         print("4.Admin Login")
-        print("5.Quit")
+        print("5.About Me")
+        print("6.Quit")
 
     def displayData(self, records):
+        print(Fore.YELLOW)
         print("--------------------------------")
         print("BLOOD TYPE  || PACKETS REMAINING")
         print("--------------------------------")

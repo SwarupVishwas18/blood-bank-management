@@ -3,9 +3,11 @@ import DonateBlood as don
 import TakeBlood as take
 import bloodInfo
 import adminPanel
-
+from colorama import Fore
+import normal
 
 while True:
+    print(Fore.CYAN)
     menu = Menu.Menus()
     menu.menu()
     tk = input("Enter your choice : ")
@@ -22,7 +24,10 @@ while True:
     elif (tk == "4"):
         adminPanel.login()
     elif (tk == "5"):
-        print("Thank You for using our software")
+        normal.aboutMe()
+    elif (tk == "6"):
+        normal.quitMe()
         break
     else:
+        print(Fore.RED)
         print("Wrong Choice")

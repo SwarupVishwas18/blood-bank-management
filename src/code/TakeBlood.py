@@ -1,9 +1,10 @@
 import transact
 import bloodInfo
-
+from colorama import Fore
 
 class TakeBlood:
     def accept(self):
+        print(Fore.CYAN)
         name = input("Enter your name :")
         email = input("Enter Email :")
         bloodG = input("Enter Blood Group :")
