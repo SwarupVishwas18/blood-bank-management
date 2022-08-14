@@ -1,10 +1,12 @@
 import transact
 import bloodInfo
 from colorama import Fore
+import normal
 
 class DonateBlood:
     def accept(self):
-        print(Fore.CYAN)
+        normal.printBrand("Donate Blood", Fore.YELLOW, '-')
+        print(Fore.YELLOW)
         name = input("Enter your name :")
         email = input("Enter Email :")
         bloodG = input("Enter Blood Group :")

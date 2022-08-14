@@ -42,7 +42,7 @@ class BloodInfo:
         q = f"SELECT * FROM blood WHERE bloodType = '{bType}'"
         self.c.execute(q)
         res = self.c.fetchone()
-        print(res)
+        # print(res)
         return res[1]
 
     def getAllBloodData(self):

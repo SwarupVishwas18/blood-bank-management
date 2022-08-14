@@ -56,5 +56,7 @@ class Transaction:
 
     def updateStatus(self):
         data = self.getBloodRecord()
-        q = f"UPDATE trans SET status = 'success' WHERE id = '{data[0]}''"
-        print("Blood Donated Successfully..!!")
+        q = f"UPDATE trans SET status = 'success' WHERE id = '{data[2]}'"
+        self.c.execute(q)
+        self.conn.commit()
+        print(data[2])
