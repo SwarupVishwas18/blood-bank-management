@@ -9,7 +9,11 @@ class TakeBlood:
         name = input("Enter your name :")
         email = input("Enter Email :")
         bloodG = input("Enter Blood Group :")
-        bag = int(input("How much bag needed :"))
+        try:
+            bag = int(input("How much bag needed :"))
+        except ValueError:
+            print(Fore.RED)
+            print("Enter Number..!!")
         donTran = transact.Transaction()
         donTran.addRecBlood(name, email, bloodG, bag)
         blood = bloodInfo.BloodInfo()

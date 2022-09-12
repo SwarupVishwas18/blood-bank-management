@@ -11,6 +11,7 @@
 from colorama import Fore
 from sys import exit
 
+
 # Print Logo
 def printBrand(brand, color = Fore.CYAN, symbol="#"):
     print(color)
@@ -67,3 +68,11 @@ def aboutMe():
     print("Instagram : @swarup.vishwas".center(40))
     print("Built With Peace 💝".center(40))
     print("="*40)
+
+def logToFile(e):
+    print(Fore.RED)
+    print("Closed Unexpectedly Please Check logs.txt")
+    file = open('./logs.txt', 'w')
+    file.write(e)
+    file.close()
+    quitMe()

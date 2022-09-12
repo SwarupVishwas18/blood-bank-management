@@ -10,7 +10,11 @@ class DonateBlood:
         name = input("Enter your name :")
         email = input("Enter Email :")
         bloodG = input("Enter Blood Group :")
-        bag = int(input("How much bag filled :"))
+        try:
+            bag = int(input("How much bag filled :"))
+        except ValueError:
+            print(Fore.RED)
+            print("Enter Number..!!")
         donTran = transact.Transaction()
         donTran.addDonatedBlood(name, email, bloodG, bag)
         blood = bloodInfo.BloodInfo()
